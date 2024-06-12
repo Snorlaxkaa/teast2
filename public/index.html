@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多人記憶搶奪牌遊戲</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div>
+    <label for="board-size">選擇棋盤大小:</label>
+    <select id="board-size">
+      <option value="2">2x2</option>
+      <option value="4">4x4</option>
+      <option value="6">6x6</option>
+      <option value="8">8x8</option>
+    </select>
+    <button onclick="createRoom()">創建房間</button>
+    <input id="room-id" placeholder="輸入房間 ID" />
+    <button onclick="joinRoom()">加入房間</button>
+  </div>
+  <div id="game" class="hidden">
+    <div id="board"></div>
+    <ul id="players"></ul>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
